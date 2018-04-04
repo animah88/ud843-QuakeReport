@@ -143,8 +143,10 @@ public class EarthquakeActivity extends AppCompatActivity
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
         uriBuilder.appendQueryParameter("format", "geojson");
-        uriBuilder.appendQueryParameter("limit", "10");
+        uriBuilder.appendQueryParameter("limit", "25");
+        uriBuilder.appendQueryParameter("starttime", "2000-01-01");
         uriBuilder.appendQueryParameter("minmag", minMagnitude);
+//        starttime=2014-01-01&endtime=2018-12-01
         uriBuilder.appendQueryParameter("orderby", orderBy);
 
         return new EarthquakeLoader(this, uriBuilder.toString());
